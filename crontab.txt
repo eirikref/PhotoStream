@@ -1,0 +1,2 @@
+# My simple example crontab
+*/5 * * * *     /Users/eirikref/bin/syncstream.sh > /dev/null 2>&1
