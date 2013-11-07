@@ -4,19 +4,6 @@
 #
 # Author:  Eirik Refsdal <eirikref@gmail.com>
 # Version: 2013-11-07
-#
-# I love automatically syncing photos from my iPhone to my MacBook Air
-# using PhotoStreams, but I'm just not able to get comfortable with
-# iPhoto. I want a folder with my photos, where I can manipulate file
-# using any means (terminal, iPhoto, Finder, etc.), and having this
-# magic, duplicate database only accessible by iPhoto just makes me
-# confused.
-#
-# So I need to:
-# 1. Have syncing of my PhotoStream enabled
-# 2. Copy files from the internal PhotoStream folder to my own folder
-# 3. Do 2) automatically
-# 4. Don't copy files older than the last time I synced
 
 readonly SOURCE_DIR=$HOME"/Library/Application Support/iLifeAssetManagement/assets/sub"
 readonly DEST_DIR=$HOME"/PhotoStream"
@@ -77,8 +64,7 @@ sync()
     printf "Syncing new files... "
     find "${SOURCE_DIR}" -iname "*.JPG" -newerct "${PREV_SYNC_TS}" | while read f
     do
-        # echo $f
-        cp "$f" "${DEST_DIR}"
+        cp -av "$f" "${DEST_DIR}"
     done
     printf "Done\n"
 }
