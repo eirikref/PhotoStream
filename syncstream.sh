@@ -24,7 +24,8 @@ init()
     if [ ! -d "${SOURCE_DIR}" ]; then
         echo "Source PhotoStream directory does not exist. Are you sure you" \
              "have installed iPhoto/Aperture and enabled My PhotoStream under" \
-             "iCloud Photo Options in in System Preferences?"
+             "iCloud Photo Options in in System Preferences? Exiting."
+        exit 1
     fi
 
     if [ ! -d "${DEST_DIR}" ]; then
