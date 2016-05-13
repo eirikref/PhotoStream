@@ -15,7 +15,7 @@ with any tool (Finder, through the terminal, etc.)
 
 So this is a simple shell script that copies all new files from my
 PhotoStream and to a separate folder. I have chosen to run it as a
-cronjob ever five minutes in order to automate the process.
+cronjob every five minutes in order to automate the process.
 
 General Overview
 ----------------
